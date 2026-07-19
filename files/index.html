@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="logo">
+        <img src="https://api.iconify.design/lucide:shopping-bag.svg?color=%23f59e0b" 
+        alt="Logo" width="24" height="24" style="vertical-align: middle;">
+        <span class="logo-text">Mini <span class="accent">Store</span></span>
+      </div>
+      <nav class="nav-links">
+        <a href="#" class="nav-link active" data-target="home-section">Home</a>
+        <a href="#" class="nav-link" data-target="products-section">Products</a>
+        <a href="#" class="nav-link" data-target="contact-section"
+          >Contact Us</a
+        >
+        <a href="#" class="nav-link" data-target="cart-summary"
+          >Cart (<span id="cart-count">0</span>)</a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <!-- HOME SECTION -->
+      <section id="home-section">
+        <div class="hero">
+          <div class="hero-text">
+            <h1>
+              Discover the Future of<br /><span class="accent"
+                >Smart Shopping</span
+              >
+            </h1>
+            <p>
+              Explore a curated collection of high-quality electronics, modern
+              apparel, and must-have accessories designed to fit your digital
+              lifestyle.
+            </p>
+            <div class="hero-buttons">
+              <button class="btn btn-primary" id="shop-now-btn">
+                Shop Now ↗
+              </button>
+              <button class="btn btn-secondary" id="explore-categories-btn">
+                Explore Categories
+              </button>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img
+              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80"
+              alt="Open sign hanging in a shop window"
+            />
+          </div>
+        </div>
+
+        <div class="categories-section" id="categories-section">
+          <h2>Featured Categories</h2>
+          <p class="section-subtitle">
+            Browse our top-selling categories crafted with quality in mind
+          </p>
+
+          <div class="categories-grid">
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <h3>Electronics</h3>
+              <p>Premium headphones, gadgets, and cutting-edge accessories.</p>
+            </div>
+            <div class="category-card">
+              <div class="category-icon"><i class="fa-solid fa-shirt"></i></div>
+              <h3>Apparel</h3>
+              <p>Sleek, comfortable, and timeless fashion statements.</p>
+            </div>
+            <div class="category-card">
+              <div class="category-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+              </div>
+              <h3>Accessories</h3>
+              <p>Everyday essentials, bags, and luxury items.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCTS SECTION -->
+      <section id="products-section" style="padding-top: 60px">
+        <div class="products-header">
+          <h2>Our Product Catalog</h2>
+          <p class="section-subtitle">
+            Hand-picked premium products curated for quality and durability.
+          </p>
+        </div>
+
+        <div id="products-grid" class="products-grid">
+          <!-- Products rendered dynamically by script.js -->
+        </div>
+
+        <!-- CART SUMMARY SECTION -->
+        <div id="cart-summary" class="cart-summary" style="margin-top: 40px">
+          <h2>Shopping Cart Summary</h2>
+          <hr />
+
+          <div id="cart-items">
+            <!-- Cart items rendered dynamically by script.js -->
+          </div>
+
+          <div class="cart-total-row">
+            <span>Cart Total:</span>
+            <span id="cart-total">$0.00</span>
+          </div>
+          <div class="cart-total-row final-price-row">
+            <span>Final Price:</span>
+            <span id="final-price">$0.00</span>
+          </div>
+
+          <div class="promo-box">
+            <div class="promo-icon">💳</div>
+            <h3>Have a Promotional Code?</h3>
+            <p>
+              Apply a code below to claim high-value discounts on your next
+              purchase! Active codes:
+            </p>
+            <div class="promo-codes">
+              <span class="promo-chip">SAVE10</span>
+              <span class="promo-chip">SAVE20</span>
+            </div>
+            <button class="btn btn-primary" id="apply-promo-btn">
+              Apply Promo Code
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section
+        id="contact-section"
+        style="padding-top: 80px; padding-bottom: 80px"
+      >
+        <div class="contact-header">
+          <h2>Contact Us</h2>
+          <p class="section-subtitle">
+            Have questions? We would love to hear from you. Send us a message!
+          </p>
+        </div>
+
+        <form id="contact-form" class="contact-form">
+          <label for="contact-name">Full Name</label>
+          <input type="text" id="contact-name" placeholder="Enter your name" />
+
+          <label for="contact-email">Email Address</label>
+          <input
+            type="email"
+            id="contact-email"
+            placeholder="Enter your email address"
+          />
+
+          <label for="contact-message">Your Message</label>
+          <textarea
+            id="contact-message"
+            placeholder="Type your message here..."
+            rows="5"
+          ></textarea>
+
+          <button type="submit" class="btn btn-primary" id="send-message-btn">
+            Send Message ➤
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Quality products. Simple experience. Delivered to you.</p>
+      <p>© 2026 Mini Store. All rights reserved.</p>
+    </footer>
+
+    <!-- SUCCESS TOAST -->
+    <div id="toast" class="toast hidden">
+      <div class="toast-icon">✅</div>
+      <div class="toast-text">
+        <strong>Success!</strong>
+        <p>Your message has been sent successfully.</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
